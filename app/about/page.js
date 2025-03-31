@@ -1,82 +1,96 @@
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Layout, { Section, Hero, Card, Button } from '../components/Layout';
+import { theme } from '../styles/theme';
 
 export default function About() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow">
-        <div className="bg-white py-24 sm:py-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:mx-0">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">关于我们</h2>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                OrderMachine成立于2020年，致力于为餐饮行业提供创新的点餐解决方案。我们的使命是让点餐变得更加简单、高效和愉快。
-              </p>
-            </div>
-            <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:mt-10 lg:max-w-none lg:grid-cols-12">
-              <div className="relative lg:col-span-7">
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl bg-gray-100">
-                  <img
-                    src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80"
-                    alt="餐厅内部"
-                    className="h-full w-full object-cover"
-                  />
-                </div>
-              </div>
-              <div className="lg:col-span-5">
-                <h3 className="text-2xl font-bold tracking-tight text-gray-900">我们的愿景</h3>
-                <p className="mt-6 text-base leading-7 text-gray-600">
-                  我们相信，通过技术创新，我们可以帮助餐厅提高运营效率，为顾客提供更好的服务体验。OrderMachine不仅仅是一个点餐系统，更是餐厅数字化转型的得力助手。
-                </p>
-                <div className="mt-10 flex">
-                  <a href="/contact" className="text-sm font-semibold leading-6 text-primary">
-                    联系我们 <span aria-hidden="true">→</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-            <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-              <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-                <div className="flex flex-col">
-                  <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                    <svg className="h-5 w-5 flex-none text-primary" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-                    </svg>
-                    创新科技
-                  </dt>
-                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                    <p className="flex-auto">我们不断探索新技术，为客户提供最前沿的解决方案。</p>
-                  </dd>
-                </div>
-                <div className="flex flex-col">
-                  <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                    <svg className="h-5 w-5 flex-none text-primary" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-                    </svg>
-                    优质服务
-                  </dt>
-                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                    <p className="flex-auto">我们提供专业的客户支持，确保客户获得最佳使用体验。</p>
-                  </dd>
-                </div>
-                <div className="flex flex-col">
-                  <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                    <svg className="h-5 w-5 flex-none text-primary" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.857-9.809a.75.75 0 00-1.214-.882l-3.483 4.79-1.88-1.88a.75.75 0 10-1.06 1.061l2.5 2.5a.75.75 0 001.137-.089l4-5.5z" clipRule="evenodd" />
-                    </svg>
-                    持续发展
-                  </dt>
-                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                    <p className="flex-auto">我们致力于持续改进产品，满足客户不断变化的需求。</p>
-                  </dd>
-                </div>
-              </dl>
+    <Layout>
+      <Hero
+        title="About OrderMachine"
+        subtitle="Revolutionizing restaurant ordering since 2020"
+        className="py-20"
+      />
+      
+      <Section>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div className="animate-fadeIn">
+            <h2 className={theme.typography.h2}>Our Story</h2>
+            <p className={`${theme.typography.body} mt-4`}>
+              Founded in 2020, OrderMachine emerged from a simple observation: the restaurant industry needed a better way to handle orders. Our team of industry veterans and tech innovators came together to create a solution that would transform how restaurants operate.
+            </p>
+            <p className={`${theme.typography.body} mt-4`}>
+              Today, we're proud to serve 70% Reduce Labor Costs, helping them streamline their operations and deliver exceptional customer experiences.
+            </p>
+            <div className="mt-8">
+              <Button>Join Our Team</Button>
             </div>
           </div>
+          <div className="relative h-96 animate-fadeIn" style={{ animationDelay: '0.1s' }}>
+            <img
+              src="https://images.unsplash.com/photo-1552566626-52f8b828add9"
+              alt="Restaurant interior"
+              className="rounded-lg object-cover w-full h-full"
+            />
+          </div>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </Section>
+
+      <Section className="bg-gray-50">
+        <div className="text-center mb-12">
+          <h2 className={theme.typography.h2}>Our Values</h2>
+          <p className={`${theme.typography.body} mt-4 max-w-2xl mx-auto`}>
+            These core values guide everything we do at OrderMachine
+          </p>
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <Card className="animate-fadeIn">
+            <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Innovation</h3>
+            <p className="text-gray-600">
+              We constantly push the boundaries of what's possible in restaurant technology.
+            </p>
+          </Card>
+
+          <Card className="animate-fadeIn" style={{ animationDelay: '0.1s' }}>
+            <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Customer Focus</h3>
+            <p className="text-gray-600">
+              Our customers' success is our success. We're committed to their growth and satisfaction.
+            </p>
+          </Card>
+
+          <Card className="animate-fadeIn" style={{ animationDelay: '0.2s' }}>
+            <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Integrity</h3>
+            <p className="text-gray-600">
+              We operate with transparency and honesty, building trust with our customers and partners.
+            </p>
+          </Card>
+        </div>
+      </Section>
+
+      <Section>
+        <div className="text-center">
+          <h2 className={theme.typography.h2}>Join Our Mission</h2>
+          <p className={`${theme.typography.body} mt-4 max-w-2xl mx-auto`}>
+            We're always looking for talented individuals who share our vision of transforming the restaurant industry.
+          </p>
+          <div className="mt-8">
+            <Button>View Open Positions</Button>
+          </div>
+        </div>
+      </Section>
+    </Layout>
   );
 } 

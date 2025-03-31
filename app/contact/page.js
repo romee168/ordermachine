@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import Layout, { Section, Hero, Card, Button } from '../components/Layout';
 
 export default function Contact() {
   const [formData, setFormData] = useState({

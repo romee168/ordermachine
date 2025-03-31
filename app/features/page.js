@@ -1,63 +1,69 @@
-import Navbar from '../components/Navbar';
-import Footer from '../components/Footer';
+import Layout, { Section, Hero, Card, Button } from '../components/Layout';
+import { theme } from '../styles/theme';
 
 export default function Features() {
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main className="flex-grow">
-        <div className="bg-white py-24 sm:py-32">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl lg:text-center">
-              <h2 className="text-base font-semibold leading-7 text-primary">更快的点餐体验</h2>
-              <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                为您的餐厅带来革命性的改变
-              </p>
-              <p className="mt-6 text-lg leading-8 text-gray-600">
-                使用OrderMachine，您可以轻松管理订单，提高效率，并为顾客提供更好的服务体验。
-              </p>
+    <Layout>
+      <Hero
+        title="Powerful Features for Modern Restaurants"
+        subtitle="Everything you need to streamline your ordering process and delight your customers"
+        className="py-20"
+      />
+      
+      <Section>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <Card className="animate-fadeIn">
+            <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2" />
+              </svg>
             </div>
-            <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-              <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-                <div className="flex flex-col">
-                  <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                    <svg className="h-5 w-5 flex-none text-primary" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M5.5 17a4.5 4.5 0 01-1.44-8.765 4.5 4.5 0 018.302-3.046 3.5 3.5 0 014.504 4.272A4 4 0 0115 17H5.5zm3.75-2.75a.75.75 0 001.5 0V9.66l1.95 2.1a.75.75 0 001.1-1.02l-3.25-3.5a.75.75 0 00-1.1 0l-3.25 3.5a.75.75 0 101.1 1.02l1.95-2.1v4.59z" clipRule="evenodd" />
-                    </svg>
-                    快速点餐
-                  </dt>
-                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                    <p className="flex-auto">通过扫描二维码，顾客可以快速浏览菜单并下单，无需等待服务员。</p>
-                  </dd>
-                </div>
-                <div className="flex flex-col">
-                  <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                    <svg className="h-5 w-5 flex-none text-primary" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M10 1a4.5 4.5 0 00-4.5 4.5V9H5a2 2 0 00-2 2v6a2 2 0 002 2h10a2 2 0 002-2v-6a2 2 0 00-2-2h-.5V5.5A4.5 4.5 0 0010 1zm3 8V5.5a3 3 0 10-6 0V9h6z" clipRule="evenodd" />
-                    </svg>
-                    安全支付
-                  </dt>
-                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                    <p className="flex-auto">支持多种支付方式，确保交易安全，让顾客放心消费。</p>
-                  </dd>
-                </div>
-                <div className="flex flex-col">
-                  <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                    <svg className="h-5 w-5 flex-none text-primary" viewBox="0 0 20 20" fill="currentColor">
-                      <path fillRule="evenodd" d="M5.5 3A1.5 1.5 0 004 4.5v6.75A2.75 2.75 0 006.75 14h8.5A2.75 2.75 0 0018 11.25V4.5A1.5 1.5 0 0016.5 3h-11zM5 14.25a.75.75 0 00.75.75h8.5a.75.75 0 00.75-.75V4.5a.5.5 0 00-.5-.5h-11a.5.5 0 00-.5.5v9.75z" clipRule="evenodd" />
-                    </svg>
-                    订单管理
-                  </dt>
-                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                    <p className="flex-auto">实时查看订单状态，轻松管理厨房流程，提高运营效率。</p>
-                  </dd>
-                </div>
-              </dl>
+            <h3 className="text-xl font-semibold mb-2">Smart Ordering</h3>
+            <p className="text-gray-600 mb-4">
+              Customers can easily browse the menu, customize orders, and place them directly from their table.
+            </p>
+            <Button variant="outline">Learn More</Button>
+          </Card>
+
+          <Card className="animate-fadeIn" style={{ animationDelay: '0.1s' }}>
+            <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+              </svg>
             </div>
-          </div>
+            <h3 className="text-xl font-semibold mb-2">Secure Payments</h3>
+            <p className="text-gray-600 mb-4">
+              Multiple payment options with secure processing and instant confirmation.
+            </p>
+            <Button variant="outline">Learn More</Button>
+          </Card>
+
+          <Card className="animate-fadeIn" style={{ animationDelay: '0.2s' }}>
+            <div className="h-12 w-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4">
+              <svg className="h-6 w-6 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+              </svg>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Analytics Dashboard</h3>
+            <p className="text-gray-600 mb-4">
+              Track orders, analyze customer behavior, and optimize your menu with detailed insights.
+            </p>
+            <Button variant="outline">Learn More</Button>
+          </Card>
         </div>
-      </main>
-      <Footer />
-    </div>
+      </Section>
+
+      <Section className="bg-gray-50">
+        <div className="text-center mb-12">
+          <h2 className={theme.typography.h2}>Ready to Transform Your Restaurant?</h2>
+          <p className={`${theme.typography.body} mt-4 max-w-2xl mx-auto`}>
+            70% Reduce Labor Costs with OrderMachine.
+          </p>
+        </div>
+        <div className="flex justify-center">
+          <Button>Get Free Trial Device</Button>
+        </div>
+      </Section>
+    </Layout>
   );
 } 
